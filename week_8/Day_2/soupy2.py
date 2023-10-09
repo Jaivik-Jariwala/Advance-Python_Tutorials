@@ -1,15 +1,14 @@
-!pip install bs4
-!pip install BeautifulSoup
-#navigate the html tree
 from bs4 import BeautifulSoup
 
-#sample html content 
-html_content = "<div><p>parapgraph 1</p><>Paragraph 2</p></div>"
+# Sample HTML content (corrected)
+html_content = "<div><p>Paragraph 1</p><p>Paragraph 2</p></div>"
 
-#parse the html 
+# Parse the HTML
 soup = BeautifulSoup(html_content, "html.parser")
 
-#navigate the html tree 
-d = soup.div 
-for p in d.find_all("p"):
+# Navigate the HTML tree
+div_element = soup.div  # Get the <div> element
+
+# Find all <p> elements within the <div> and print their text
+for p in div_element.find_all("p"):
     print(p.text)

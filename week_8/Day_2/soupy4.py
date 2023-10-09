@@ -1,14 +1,16 @@
-#scraping the real website 
-# make a http request and retreive the html content of web page and parse the html to ectreac the 
 import requests
 from bs4 import BeautifulSoup
 
-#maker an http ge trequest
-url =" "
-response = requests.get(url) 
+# Make an HTTP GET request
+url = "https://www.example.com"  # Replace with the URL of the website you want to scrape
+response = requests.get(url)
 
-#parse html  
-soup =/ BeautifulSoup(response.test, "html.parser")
+# Check if the request was successful (status code 200)
+if response.status_code == 200:
+    # Parse HTML content
+    soup = BeautifulSoup(response.text, "html.parser")
 
-#extract and print 
-print("page title", soup.title.text)
+    # Extract and print the page title
+    print("Page title:", soup.title.text)
+else:
+    print("Failed to retrieve the webpage. Status code:", response.status_code)
