@@ -3,10 +3,10 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 
 driver=webdriver.Firefox()
-driver.get("")
+driver.get("https://github.com/Jaivik-Jariwala")
 
 #scroll down tolad dynamic content 
-driver.execute_script("window.scollTo(0, doscuments.body.scrollHeight);")
+driver.execute_script("window.scollTo(10, doscuments.body.scrollHeight);")
 
 #retrerive the page source HTML of the webpage ftet the scrollign action 
 page_source=driver.page_source
